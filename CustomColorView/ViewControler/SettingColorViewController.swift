@@ -32,10 +32,6 @@ final class SettingColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
-        redSliderAction(redSlider)
-        greenSliderAction(greenSlider)
-        blueSliderAction(blueSlider)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -158,12 +154,10 @@ extension SettingColorViewController: UITextFieldDelegate {
             showAlert(title: "Ошибка", message: "Введите допустимое значение")
             return false
         }
-        
         if value < 0.01 || value > 1.0 {
             showAlert(title: "Ошибка", message: "Значение должно быть от 0.01 до 1.0")
             return false
         }
-        
         return true
     }
     
